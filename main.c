@@ -1,4 +1,5 @@
 #include "shell.h"
+#include <stdio.h>
 
 /**
  * main - The function indicates the entry point
@@ -38,12 +39,10 @@ int main(int ac, char **av)
 			}
 			return (EXIT_FAILURE);
 		}
-		info->readfd = fd;
+		info[0].readfd = fd; /*  */ Changed info->readfd to info[0].readfd
 	}
 	populate_env_list(info);
 	read_history(info);
 	hsh(info, av);
 	return (EXIT_SUCCESS);
 }
-
-
