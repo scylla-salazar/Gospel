@@ -4,8 +4,9 @@
  * main - The function indicates the entry point
  * @ac: Refers to arg count
  * @av: Refers to arg vector
+ * Updated by scylla-salazar on 24th May 2023.
  *
- * Return: 0 on success, 1 on error
+ * Return: 0 on success; 1, if error
  */
 
 int main(int ac, char **av)
@@ -36,10 +37,11 @@ int main(int ac, char **av)
 			}
 			return (EXIT_FAILURE);
 		}
-		info->readfd = fd1;
+		info->readfd1 = fd1;
 	}
 	populate_env_list(info);
 	read_history(info);
 	hsh(info, av);
 	return (EXIT_SUCCESS);
 }
+
