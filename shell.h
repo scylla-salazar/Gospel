@@ -59,18 +59,18 @@ typedef struct liststr
  *@argv: Refers to an array of strings generated from arg
  *@path:  string path for the current command
  *@argc: Refers the argument count;
- *@line_count: the error count;
- *@err_num: the error code for exit()s
- *@linecount_flag: if on count this line of input
- *@fname: the program filename;
  *@env: linked list local copy of environ
  *@environ: custom modified copy of environ from LL env
  *@history: refers to the history node;
+ *@err_num: the error code for exit()s
+ *@linecount_flag: if on count this line of input
+ *@fname: the program filename;
+ *@cmd_buf: address of pointer to cmd_buf, on if chaining
+ *@cmd_buf_type: CMD_type ||, &&, ;
  *@alias: refers the alias node;
  *@env_changed: on if environ was changed
  *@status: referrs to the return status of the last exec'd command
- *@cmd_buf: address of pointer to cmd_buf, on if chaining
- *@cmd_buf_type: CMD_type ||, &&, ;
+ *@line_count: the error count;
  *@readfd: the fd from which to read line input
  *@histcount: the history line number count
  */
