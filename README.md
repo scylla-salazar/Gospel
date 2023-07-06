@@ -8,7 +8,7 @@ DATE:
 20th May 2023
 
 PROJECT NAME:
-0x16. C - Simple Shell
+Gospel
 
 TASKS:
 
