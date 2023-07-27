@@ -1,12 +1,10 @@
 #include "shell.h"
 
 /**
- **_strncpy - This function copies a string
- *@dest: Refers to the destination string to be copied to
- *@src: Refers to the source string
- *@n: Refers to the amount of characters to be copied
- *Completed by scylla-salazar on 20th May 2023.
- *
+ **_strncpy - This function copies a str
+ *@dest: Refers to the dest str to be copied to
+ *@src: Refers to the source str
+ *@n: Refers to the amt of chars to be copied
  *Return: the concatenated string
  */
 

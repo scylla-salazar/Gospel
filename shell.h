@@ -40,9 +40,7 @@ extern char **environ;
 /**
  * struct liststr - singly linked list
  * @num: the number field
- *
- * Scylla-salazar and Loveline-Ezenwafor
- * @str: a string
+ *  @str: a str
  * @next: points to the next node
  */
 typedef struct liststr
@@ -53,26 +51,26 @@ typedef struct liststr
 } list_t;
 
 /**
- *struct passinfo - it contain pseudo-arguements to pass into a funct,
- *allowing uniform prototype for function pointer struct
- *@arg: Refers a string generated from getline containing arguements
- *@argv: Refers to an array of strings generated from arg
- *@path:  string path for the current command
- *@argc: Refers the argument count;
- *@env: linked list local copy of environ
+ *struct passinfo - This contain pseudo-args to pass into a funct,
+ *allowing uniform prototype for function ptr struct
+ *@arg: Refers a string generated from getline containing args
+ *@argv: Refers to array of strs generated from arg
+ *@path:  string path for the current cmd
+ *@argc: Refers the arg count;
+ *@env: linked_list local copy of environ
  *@environ: custom modified copy of environ from LL env
- *@history: refers to the history node;
- *@err_num: the error code for exit()s
- *@linecount_flag: if on count this line of input
+ *@history: refers to the hist node;
+ *@err_num: the err code for exit()s
+ *@linecount_flag: if on count this line of input.
  *@fname: the program filename;
- *@cmd_buf: address of pointer to cmd_buf, on if chaining
+ *@cmd_buf: add of pointer to cmd_buf, on if chaining
  *@cmd_buf_type: CMD_type ||, &&, ;
  *@alias: refers the alias node;
- *@env_changed: on if environ was changed
- *@status: referrs to the return status of the last exec'd command
- *@line_count: the error count;
+ *@env_changed: on (if environ was changed)
+ *@status: referrs to the return status of the last exec'd cmd
+ *@line_count: the err count;
  *@readfd: the fd from which to read line input
- *@histcount: the history line number count
+ *@histcount: the hist line num count
  */
 typedef struct passinfo
 {
@@ -91,8 +89,8 @@ typedef struct passinfo
 	int env_changed;
 	int status;
 
-	char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mangement */
-	int cmd_buf_type; /* CMD_type ||, &&, ; */
+	char **cmd_buf;
+	int cmd_buf_type;
 	int readfd;
 	int histcount;
 } info_t;
@@ -102,8 +100,8 @@ typedef struct passinfo
 	0, 0, 0}
 
 /**
- *struct builtin - contains a builtin string and related function
- *@type: the builtin command flag
+ *struct builtin - HAS a builtin str & funct
+ *@type: the builtin cmd flag
  *@func: the function
  */
 typedef struct builtin
@@ -113,7 +111,6 @@ typedef struct builtin
 } builtin_table;
 
 
-/* toem_shloop.c */
 int hsh(info_t *, char **);
 int find_builtin(info_t *);
 void find_cmd(info_t *);
