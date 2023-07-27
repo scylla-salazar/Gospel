@@ -2,11 +2,10 @@
 
 /**
  * add_node - A funtion that adds a node to the start of the list
- * @head: Refers to address of pointer to head node
+ * @head: Refers to add of pointer to head node
  * @str: Refers to str field of node
  * @num: Refers to node index used by history
- * Completed by Loveline-Ezenwafor
- *
+ * Completed
  * Return: size of list.
  */
 list_t *add_node(list_t **head, const char *str, int num)
