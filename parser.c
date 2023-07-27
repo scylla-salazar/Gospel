@@ -1,11 +1,10 @@
 #include "shell.h"
 
 /**
- * is_cmd - This functions determines if a file is an executable command
+ * is_cmd - This functions determines if a file is an exe cmd
  * @info: Refers to the info struct
  * @path: Refers to path to the file
- * Completed by Loveline-Ezenwafor
- *
+ * Completed 
  * Return: 1 if true; 0, otherwise
  */
 
@@ -25,10 +24,10 @@ int is_cmd(info_t *info, char *path)
 }
 
 /**
- * dup_chars - This functins duplicates characters
- * @pathstr: Refers to the PATH string
- * @start: Refers to the starting index
- * @stop: stopping index.
+ * dup_chars - This functins duplicates char
+ * @pathstr: Refers to the PATH str
+ * @start: Refers to the starting ind
+ * @stop: stopping ind.
  *
  * Return: pointer to new buffer.
  */
@@ -46,9 +45,9 @@ char *dup_chars(char *pathstr, int start, int stop)
 }
 
 /**
- * find_path - The function finds this cmd in the PATH string
+ * find_path - The function finds this cmd in the PATH str
  * @info: Refers to the info struct
- * @pathstr: Refers to the PATH string
+ * @pathstr: Refers to the PATH str
  * @cmd: Refers to the cmd to find
  *
  * Return: full path of cmd if found or NULL
