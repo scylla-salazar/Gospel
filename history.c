@@ -3,8 +3,7 @@
 /**
  * get_history_file - This function gets the history file
  * @info: Refers to the parameter struct
- * Completed by scylla-salazar on 20th May 2023.
- *
+ * Completed by scylla-salaz
  * Return: allocated string containg history file, buf.
  */
 
