@@ -48,7 +48,7 @@ int _eputchar(char c)
  * _putfd - This funct writes the char to given fd
  * @fd: Referrs to The filedescriptor to write to
  * @c: Refers to The character to print
- * 
+ *
  *
  * Return: 1, On succes.
  * -1,On error,  and errno is set appropriately.
@@ -71,7 +71,7 @@ int _putfd(char c, int fd)
 
 /**
  *_putsfd - This funct prints an input str
- * 
+ *
  * @fd: Referss to the the filedescriptor to write to
  * @st: Refers to the str to be printed
  * Return: the num of chars put
