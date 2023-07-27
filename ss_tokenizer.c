@@ -5,7 +5,7 @@
  * @str: Refers to the input str.
  * @d:   Refers to the delim str.
  * Return: a pointer to an array of strings,NULL, on failure
- */ 
+ */
 
 char **str_tok(char *str, char *d)
 {

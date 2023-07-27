@@ -3,7 +3,7 @@
 /**
  * bfree - This function frees a pointer & nul the add
  * @ptr: Refers to addr of the ptr to free
- * Completed 
+ * Completed
  * Return: 1 if freeded; otherwise, 0.
  */
 

@@ -6,7 +6,7 @@
  *@b: Refers to the byte to fill with
  *@n: Refers to the amt of bytes to be filled.
  *Completed
- *Return: a pointer to the memory 
+ *Return: a pointer to the memory
  */
 
 char *_memset(char *s, char b, unsigned int n)

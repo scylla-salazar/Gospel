@@ -4,7 +4,7 @@
  * is_cmd - This functions determines if a file is an exe cmd
  * @info: Refers to the info struct
  * @path: Refers to path to the file
- * Completed 
+ * Completed
  * Return: 1 if true; 0, otherwise
  */
 
