@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * get_environ - This function returns the str array copy of our env
+ * get_environ - This funct returns the str array copy of our env
  * @info: Refers to the Structure containing potential arg.
- *          This is used to maintain const function prototype.
- * Completed by Scylla-salazar
- * Return: Always 0.
+ *   used to maintain const funct prototype.
+ * Completedsalazar
+ * Return: always (0.
  */
 
 char **get_environ(info_t *info)
@@ -20,27 +20,27 @@ char **get_environ(info_t *info)
 }
 
 /**
- * _unsetenv - This function removes an environment variable
- * @info: Refers to the Structure containing potential arguments.
- *          This is used to maintain constant function prototype.
+ * _unsetenv - This funct removes an env var
+ * @info: Referrs to the Structure containing potential args.
+ *   used to maintain const funct prototype.
  *
- *  Return: 1, on delete, 0 if otherwise
- * @var: the string environ var property
+ *  Return: 1 (on delete), 0 (else)
+ * @var: the str env var property
  */
 
 int _unsetenv(info_t *info, char *var)
 {
 	list_t *node = info->env;
 	size_t a = 0;
-	char *p;
+	char *w;
 
 	if (!node || !var)
 		return (0);
 
 	while (node)
 	{
-		p = starts_with(node->str, var);
-		if (p && *p == '=') /* */
+		w = starts_with(node->str, var);
+		if (w && *w == '=') /* testin conditions*/
 		{
 			info->env_changed = delete_node_at_index(&(info->env), a);
 			a = 0;
@@ -54,14 +54,14 @@ int _unsetenv(info_t *info, char *var)
 }
 
 /**
- * _setenv - This function initializes a new environment variable,
- *             or modify an existing one
- * @info: Refers to the structure containing potential arguments.
- *          This is used to maintain constant function prototype.
+ * _setenv - Ths func initializes a new envir var,
+ *  / modify existing one
+ * @info: Referss to the Structure containing potential args.
+ *   used to maintain const funct prototype.
  * @var: Refers to the string environ var property.
- * @value: Refers to the string environ var value.
  *
- * Return: Always 0.
+ * @value: Referrs to the str env var value.
+ * Return: always (0).
  */
 
 int _setenv(info_t *info, char *var, char *value)
