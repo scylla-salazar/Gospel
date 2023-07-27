@@ -42,7 +42,7 @@ extern char **environ;
  * struct liststr -singly_linked list
  * @num: the num field
  *  @str: a str
- * @next: points to the next node
+ * @next: pts to the next node
  */
 typedef struct liststr
 {
@@ -57,16 +57,16 @@ typedef struct liststr
  *@argv: Refers to array of strs generated from arg
  *@path:  string path for the current cmd
  *@argc: Refers the arg count;
- *@env: linked_list local copy of environ
- *@environ: custom modified copy of environ from LL env
+ *@env: linked_list local copy of env
+ *@environ: custom modified copy of env from LL env
  *@history: refers to the hist node;
- *@err_num: the err code for exit()s
- *@linecount_flag: if on count this line of input.
+ *@err_num: the err code for exit
+ *@linecount_flag: if on cnt this line of input.
  *@fname: the program filename;
  *@cmd_buf: add of ptr to cmd_buf, on if chaining
  *@cmd_buf_type: CMD_type
- *@alias: refers the alias node;
- *@env_changed: on (if environ was changed)
+ *@alias: referss the alias node;
+ *@env_changed: on (if env was changed)
  *@status: referrs to the return status of the last exec'd cmd
  *@line_count: the err count;
  *@readfd: the fd from which to read line input
@@ -102,7 +102,7 @@ typedef struct passinfo
  /**
  *struct builtin - HAS a builtin str & funct
  *@type: the builtin cmd flag
- *@func: the function
+ *@func: the funct
  */
 typedef struct builtin
 {
@@ -151,7 +151,7 @@ int _isalpha(int);
 int _atoi(char *);
 int _erratoi(char *);
 void print_error(info_t *, char *);
-int print_d(int, int);
+int print_dec(int, int);
 char *convert_number(long int, int, int);
 void remove_comments(char *);
 
