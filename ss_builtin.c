@@ -11,12 +11,12 @@
 
 int _myexit(info_t *info)
 {
-	int exitchecker;
+	int exit_checker;
 
 	if (info->argv[1])
 	{
-		exitchecker = _erratoi(info->argv[1]);
-		if (exitchecker == -1)
+		exit_checker = _erratoi(info->argv[1]);
+		if (exit_checker == -1)
 		{
 			info->status = 2;
 			print_error(info, "Illegal number: ");
@@ -40,11 +40,11 @@ int _myexit(info_t *info)
  */
 int _mycd(info_t *info)
 {
-	char *c, *direct, buffer[1024];
+	char *ch, *direct, buffer[1024];
 	int chdir_ret;
 
-	c = getcwd(buffer, 1024);
-	if (!c)
+	ch = getcwd(buffer, 1024);
+	if (!ch)
 		_puts("TODO: >>getcwd failure emsg here<<\n");
 	if (!info->argv[1])
 	{
@@ -59,7 +59,7 @@ int _mycd(info_t *info)
 	{
 		if (!_getenv(info, "OLDPWD="))
 		{
-			_puts(c);
+			_puts(ch);
 			_putchar('\n');
 			return (1);
 		}
