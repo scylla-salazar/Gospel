@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * clear_info - This function initializes info_t struct
+ * clear_info - This funct initializes info_t struct
  * @info: Refers to the struct addr.
  */
 
@@ -14,33 +14,34 @@ void clear_info(info_t *info)
 }
 
 /**
- * set_info - This function initializes info_t struct.
- * @info: Refers to the struct add.
+ * set_info - Ths funct initializes info_t struct.
+ * @info: ReferRs to the struct add.
  * @av: Refers to the arg vector.
  *
  */
 
 void set_info(info_t *info, char **av)
 {
-	int j = 0;
+	int jah = 0;
 
 	info->fname = av[0];
 	if (info->arg)
 	{
 		info->argv = str_tok(info->arg, " \t");
-		if (!info->argv) /*  */
+		if (!info->argv) /* chcks 4 conditions */
 		{
 
 			info->argv = malloc(sizeof(char *) * 2);
-			if (info->argv) /*  */
+			if (info->argv)
 			{
 				info->argv[0] = _strdup(info->arg);
 				info->argv[1] = NULL;
 			}
 		}
-		for (j = 0; info->argv && info->argv[j]; j++)
+		
+		for (jah = 0; info->argv && info->argv[jah]; jah++)
 			;
-		info->argc = j;
+		info->argc = jah;
 
 		replace_alias(info);
 		replace_vars(info);
@@ -48,10 +49,13 @@ void set_info(info_t *info, char **av)
 }
 
 /**
- * free_info - This function frees info_t struct fields.
- * @info: Refers to the struct add.
- * @all: true, if freeing all fields.
+ * free_info - This func frees info_t struct fields.
+ * @all: true (freing all fields).
+ * @info: Referrs to the struct add.
+ *
  */
+
+
 void free_info(info_t *info, int all)
 {
 	ffree(info->argv);
