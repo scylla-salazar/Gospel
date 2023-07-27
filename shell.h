@@ -99,10 +99,10 @@ typedef struct passinfo
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 	0, 0, 0}
 
- /**
- *struct builtin - HAS a builtin str & funct
- *@type: the builtin cmd flag
- *@func: the funct
+/**
+ * struct builtin - contains a builtin str related function
+ * @type: the builtin cmd flag
+ * @func: the function
  */
 typedef struct builtin
 {
