@@ -1,12 +1,15 @@
 #include "shell.h"
 
+
 /**
- * hsh - Refers to the main shell loop;
- * @info: Refers to the paramete infostruct;
+ * hsh - Referrs to the main shell loop;
  * @av: Refers to the argu vector from;
+ * @info: Referrs to the parametre infostruct;
+ *
  * Compl
  * Return: 0 on success; 1 on error, or error code
  */
+
 
 int hsh(info_t *info, char **av)
 {
@@ -33,7 +36,7 @@ int hsh(info_t *info, char **av)
 	}
 	write_history(info);
 	free_info(info, 1);
-	if (!interactive(info) && info->status) /*     */
+	if (!interactive(info) && info->status) /* chcks 4 conditions */
 		exit(info->status);
 	if (builtin_ret == -2)
 	{
@@ -45,18 +48,18 @@ int hsh(info_t *info, char **av)
 }
 
 
+
 /**
- * find_builtin - This function finds a builtin cmd;
+ * find_builtin - This funct finds a builtin cmd;
  * @info: Refers to the paramet & return info struct,
  * Return: -1 if builtin not found,
- *	    0 if builtin executed successfully;
- *	    1 if builtin found but not successful;
- *	   -2 if builtin signals exit.
+ * 0 if builtin executed successfully;
+ * 1 if builtin found but not successful, -2 -builtin signals exit.
  */
 
 int find_builtin(info_t *info)
 {
-	int a, built_in_ret = -1;
+	int w, built_in_ret = -1;
 	builtin_table builtintbl[] = {
 		{"exit", _myexit},
 		{"env", _myenv},
@@ -69,19 +72,20 @@ int find_builtin(info_t *info)
 		{NULL, NULL}
 	};
 
-	for (a = 0; builtintbl[a].type; a++) /* Checks for builtin command */
-		if (_strcmp(info->argv[0], builtintbl[a].type) == 0)
+	for (w = 0; builtintbl[w].type; w++) /* Checks for builtin cmd */
+		if (_strcmp(info->argv[0], builtintbl[w].type) == 0)
 		{
 			info->line_count++;
-			built_in_ret = builtintbl[a].func(info);
+			built_in_ret = builtintbl[w].func(info);
 			break;
 		}
 	return (built_in_ret);
 }
 
+
 /**
- * find_cmd - This function finds a cmd in PATH;
- * @info: Refers to the paramet & return info struct;
+ * find_cmd - This funct finds a cmd in PATH;
+ * @info: Refers to the paramet info struct;
  * Return: void.
  */
 
@@ -121,9 +125,11 @@ void find_cmd(info_t *info)
 	}
 }
 
+
+
 /**
- * fork_cmd - This function forks an exec thread to run cmd;
- * @info: Refers to the paramet info struct;
+ * fork_cmd - Th1s funct forks an exec thread to run cmd;
+ * @info: Refers to the parametr info struct;
  * Return: void;
  */
 
@@ -134,7 +140,7 @@ void fork_cmd(info_t *info)
 	child_pid = fork();
 	if (child_pid == -1) /* Investigates the conditions*/
 	{
-		/* TODO: PUT ERROR FUNCTION   */
+		/* TODO: PUT ERr FUNCt   */
 		perror("Error:");
 		return;
 	}
