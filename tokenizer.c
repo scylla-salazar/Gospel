@@ -1,17 +1,13 @@
 #include "shell.h"
 
 /**
- * **strtow - This function splits a string into words.
- *               Repeat delimiters are ignored
- * @str: Refers to the input string.
- * @d:   Refers to the delimeter string.
- * Completed by Loveline-Ezenwafor on 21st May 2023.
- *
- * Return: a pointer to an array of strings,
- *         NULL, on failure
- */
+ * **str_tok - This function splits a str into wrds.
+ * @str: Refers to the input str.
+ * @d:   Refers to the delim str.
+ * Return: a pointer to an array of strings,NULL, on failure
+ */ 
 
-char **strtow(char *str, char *d)
+char **str_tok(char *str, char *d)
 {
 	int x, y, z, m, num_words = 0;
 	char **s;
@@ -54,15 +50,14 @@ char **strtow(char *str, char *d)
 
 
 /**
- * **strtow2 - This function splits a string into words.
- * @str: Refers to the input string;
- * @d: Refers to the delimeter;
- *
- * Return: a pointer to an array of strings,
+ * **str_tok2 - This function splits a str into wrds.
+ * @str: Refers to the input str;
+ * @d: Refers to the delim;
+ * Return: a pointer to an array of str,
  *         NULL, on failure
  */
 
-char **strtow2(char *str, char d)
+char **str_tok2(char *str, char d)
 {
 	int x, y, z, m, num_words = 0;
 	char **s;
