@@ -1,50 +1,49 @@
 #include "shell.h"
 
 /**
- * _erratoi - s function converts a str to an int
+ * _erratoi - a function converts a str to an int
  * @s: Refers to the string to be converted
- * Completed by scylla-salazar .
- *
- * Return: 0 if no numbers in string, converted number otherwise
- *        -1 on error
+ * Completed .
+ * Return: 0 if no nums in str, converted num, otherwise
+ * -1 on error
  */
 
 int _erratoi(char *s)
 {
-	int j = 0;
-	unsigned long int rezult = 0;
+	int e = 0;
+	unsigned long int res_lt = 0;
 
 	if (*s == '+')
-		s++;  /* TODO: why does this make main return 255? */
-	for (j = 0;  s[j] != '\0'; j++)
+		s++;  /*  */
+	for (e = 0;  s[e] != '\0'; e++)
 	{
-		if (s[j] >= '0' && s[j] <= '9')
+		if (s[e] >= '0' && s[e] <= '9')
 		{
-			rezult *= 10;
-			rezult += (s[j] - '0');
-			if (rezult > INT_MAX)
+			res_lt *= 10;
+			res_lt += (s[e] - '0');
+			if (res_lt > INT_MAX)
 				return (-1);
 		}
 		else
 			return (-1);
 	}
-	return (rezult);
+	return (res_lt);
 }
 
 /**
- * print_error - This function prints an error message
- * @info: Refers to the parameter & return info struct
- * @estr: Refers to the string containing specified error type
+ * print_error - This funct prints an err message
+ * @info: Referrs to the parametre info struct
+ * @estr: Referrs to the str containing specified err type
  *
- * Return: 0 if no numbers in string, converted number otherwise
- *        -1, on error
+ * Return: 0 if no nos in str, converted num otherwise
+ * -1, on error
  */
 
 void print_error(info_t *info, char *estr)
 {
 	_eputs(info->fname);
 	_eputs(": ");
-	print_d(info->line_count, STDERR_FILENO);
+	print_dec(info->line_count, STDERR_FILENO);
 	_eputs(": ");
 	_eputs(info->argv[0]);
 	_eputs(": ");
@@ -52,18 +51,18 @@ void print_error(info_t *info, char *estr)
 }
 
 /**
- * print_d - This function prints a decimal (integer) number (base 10)
- * @input: Refers to the input
- * @fd: Refers to the filedescriptor to write to
+ * print_dec - This funct prints a decimal (int) num (base 10)
+ * @input: Referrs to the input
+ * @fd: Referrs to the filedescriptor to write to
  *
- * Return: no of characters printed
+ * Return: no of chars printed
  */
 
-int print_d(int input, int fd)
+int print_dec(int input, int fd)
 {
 	int (*__putchar)(char) = _putchar;
-	int j, counts = 0;
-	unsigned int _abs_, current;
+	int j, co_nts = 0;
+	unsigned int _abs_, cur_ent;
 
 	if (fd == STDERR_FILENO)
 		__putchar = _eputchar;
@@ -71,33 +70,33 @@ int print_d(int input, int fd)
 	{
 		_abs_ = -input;
 		__putchar('-');
-		counts++;
+		co_nts++;
 	}
 	else
 		_abs_ = input;
-	current = _abs_;
+	cur_ent = _abs_;
 	for (j = 1000000000; j > 1; j /= 10)
 	{
 		if (_abs_ / j)
 		{
-			__putchar('0' + current / j);
-			counts++;
+			__putchar('0' + cur_ent / j);
+			co_nts++;
 		}
-		current %= j;
+		cur_ent %= j;
 	}
-	__putchar('0' + current);
-	counts++;
+	__putchar('0' + cur_ent);
+	co_nts++;
 
-	return (counts);
+	return (co_nts);
 }
 
 /**
- * convert_number - This funtion converter function, a clone of itoa
- * @num: Refers to the number
- * @base: Refers to the base
- * @flags: argument flags.
+ * convert_number - This funtion converter function, a clone of a
+ * @num: Refers to the numr
+ * @base: Referrs to the base
+ * @flags: arg flags.
  *
- * Return: string.
+ * Return: str.
  */
 
 char *convert_number(long int num, int base, int flags)
@@ -129,20 +128,20 @@ char *convert_number(long int num, int base, int flags)
 }
 
 /**
- * remove_comments - This function replaces first instance of '#' with '\0'
- * @buf: Refers to thaddress of the string to modify
+ * remove_comments - This function replaces 1st instance of '#' with '\0'
+ * @buf: Referrs to thaddr of the str to modify
  *
  * Return: Always 0;
  */
 
 void remove_comments(char *buf)
 {
-	int j;
+	int t;
 
-	for (j = 0; buf[j] != '\0'; j++)
-		if (buf[j] == '#' && (!j || buf[j - 1] == ' '))
+	for (t = 0; buf[t] != '\0'; t++) /* Checks the chars */
+		if (buf[t] == '#' && (!t || buf[t - 1] == ' '))
 		{
-			buf[j] = '\0';
+			buf[t] = '\0';
 			break;
 		}
 }
