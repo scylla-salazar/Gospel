@@ -13,7 +13,7 @@ int _myexit(info_t *info)
 {
 	int exitchecker;
 
-	if (info->argv[1])  /* Is there an exit arguement */
+	if (info->argv[1])
 	{
 		exitchecker = _erratoi(info->argv[1]);
 		if (exitchecker == -1)
@@ -33,7 +33,7 @@ int _myexit(info_t *info)
 
 /**
  * _mycd - This function changes the current directory of the process
- * @info: Refers to the structure containing potential arguments.
+ * @info: Refers to the structure containing potential.
  *          This is used to maintain constant function prototype.
  *
  *  Return: Always 0
@@ -50,7 +50,7 @@ int _mycd(info_t *info)
 	{
 		direct = _getenv(info, "HOME=");
 		if (!direct)
-			chdir_ret = /* TODO: what should this be? */
+			chdir_ret = /* */
 				chdir((direct = _getenv(info, "PWD=")) ? direct : "/");
 		else
 			chdir_ret = chdir(direct);
@@ -84,7 +84,7 @@ int _mycd(info_t *info)
 
 /**
  * _myhelp - This function changes the current directory of the process
- * @info: Refers to the Structure containing potential arguments.
+ * @info: Refers to the Structure containing potential args.
  *          This is used to maintain constant function prototype.
  *
  *  Return: Always 0
