@@ -2,11 +2,12 @@
 
 /**
  * main - This isentry point
- * @ac: REFERS TO arg count;
+ * @ac: REFERS TO arg cnt;
  * @av: arg vector
  * Updated by scyll
- * Return: 0 on suces; or 1 if error
+ * Return: 0 on suces or 1 if error
  */
+
 
 int main(int ac, char **av)
 {
