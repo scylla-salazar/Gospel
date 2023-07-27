@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * _myexit - This function exits the shell
- * @info: Refers to the Structure containing potential arg.
- *          It is used to maintain constant function prototype.
- * Completed by Scylla-Salaza
- * Return: exits with a given exit status
- *         (-2) if info.argv[1] != "exit"
+ * _myexit - This funct exits the shell
+ * @info: Referrs to the Structure containing potential arg.
+ * used to maintain const funct prototype.
+ * Completed
+ * Return: exits with a given exit status, (-2)
  */
+
 
 int _myexit(info_t *info)
 {
@@ -32,12 +32,13 @@ int _myexit(info_t *info)
 }
 
 /**
- * _mycd - This function changes the current directory of the process
- * @info: Refers to the structure containing potential.
- *          This is used to maintain constant function prototype.
+ * _mycd - This funct changes the curr_nt dir of the process
+ * @info: Refers to the struct containing potential.
+ *  used to maintain const funct prototype.
  *
- *  Return: Always 0
+ *  Return: allways (0)
  */
+
 int _mycd(info_t *info)
 {
 	char *ch, *direct, buffer[1024];
@@ -64,7 +65,7 @@ int _mycd(info_t *info)
 			return (1);
 		}
 		_puts(_getenv(info, "OLDPWD=")), _putchar('\n');
-		chdir_ret = /* TODO: what should this be? */
+		chdir_ret = /* TODO: */
 			chdir((direct = _getenv(info, "OLDPWD=")) ? direct : "/");
 	}
 	else
@@ -83,9 +84,9 @@ int _mycd(info_t *info)
 }
 
 /**
- * _myhelp - This function changes the current directory of the process
- * @info: Refers to the Structure containing potential args.
- *          This is used to maintain constant function prototype.
+ * _myhelp - This funct changes the current dir of the process
+ * @info: Referrs to the Structure containing potential args.
+ *  used to maintain const funct prototype.
  *
  *  Return: Always 0
  */
