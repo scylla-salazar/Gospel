@@ -1,4 +1,4 @@
-ALX COHORT 13 GROUP PROJECT
+ALX COHORT 15 GROUP PROJECT
 
 AUTHORS:
 Iwuchukwu Alexander <iwuchukwualexander@gmail.com>
