@@ -1,11 +1,10 @@
 #include "shell.h"
 
 /**
- * get_environ - This function returns the string array copy of our environ
- * @info: Refers to the Structure containing potential arguments.
- *          This is used to maintain constant function prototype.
- * Completed by Scylla-salazar on 20th May 2023.
- *
+ * get_environ - This function returns the str array copy of our env
+ * @info: Refers to the Structure containing potential arg.
+ *          This is used to maintain const function prototype.
+ * Completed by Scylla-salazar
  * Return: Always 0.
  */
 
