@@ -2,10 +2,7 @@ ALX COHORT 13 GROUP PROJECT
 
 AUTHORS:
 Iwuchukwu Alexander <iwuchukwualexander@gmail.com>
-Ezenwafor Loveline <ezenwaforchioma@gmail.com>
 
-DATE:
-20th May 2023
 
 PROJECT NAME:
 Gospel
