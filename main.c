@@ -1,13 +1,11 @@
 #include "shell.h"
 
 /**
- * main - This is entry point
+ * main - This isentry point
  * @ac: REFERS TO arg count;
  * @av: arg vector
- *
- * Updated by scylla-salazar on 24th May
- *
- * Return: 0 on succes; or 1 if error
+ * Updated by scyll
+ * Return: 0 on suces; or 1 if error
  */
 
 int main(int ac, char **av)
