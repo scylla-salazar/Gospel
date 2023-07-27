@@ -1,11 +1,10 @@
 #include "shell.h"
 
 /**
- * _strlen - This function returns the length of a string
- * @s: Refers to the string whose length to check
- * Completed by Loveline-Ezenwafor
- *
- * Return: integer length of string
+ * _strlen - This function returns the length of a str
+ * @s: Refers to str whose length to check
+ * Completed
+ * Return: int length of str
  */
 
 int _strlen(char *s)
@@ -21,11 +20,11 @@ int _strlen(char *s)
 }
 
 /**
- * _strcmp - This function performs lexicogarphic comparison of two strings.
- * @s1: Refers to the first string
- * @s2: Refers to the second string
+ * _strcmp - This function performs lexico comparison of two str.
+ * @s1: Refers to the 1st str
+ * @s2: Refers to the 2nd str
  *
- * Return: negative if s1 < s2, positive if s1 > s2, and zero if s1 == s2
+ * Return: negative if s1 < s2, positive if s1 > s2,& zero if s1 == s2
  */
 
 int _strcmp(char *s1, char *s2)
@@ -44,11 +43,10 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
- * starts_with - This function checks if needle starts with haystack
- * @haystack: Refers to th3 string to search
- * @needle: Refers to the substring to find.
- *
- * Return: address of next char of haystack or NULL
+ * starts_with -This function checks if needle starts with haystack
+ * @haystack: Refers to th3 str to search
+ * @needle: Refers to the substr to find.
+ * Return: addr of next char of haystack or NULL
  */
 char *starts_with(const char *haystack, const char *needle)
 {
@@ -59,11 +57,10 @@ char *starts_with(const char *haystack, const char *needle)
 }
 
 /**
- * _strcat - concatenates two strings
- * @dest: the destination buffer
- * @src: the source buffer
- *
- * Return: pointer to destination buffer
+ * _strcat - concatenates two str
+ * @dest: the destination buf
+ * @src: the source buf
+ * Return: ptr to dest buf
  */
 char *_strcat(char *dest, char *src)
 {
