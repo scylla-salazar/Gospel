@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * _erratoi - s function converts a string to an integer
+ * _erratoi - s function converts a str to an int
  * @s: Refers to the string to be converted
- * Completed by scylla-salazar on 20th May 2023.
+ * Completed by scylla-salazar .
  *
  * Return: 0 if no numbers in string, converted number otherwise
  *        -1 on error
