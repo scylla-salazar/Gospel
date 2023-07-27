@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * clear_info - This funct initializes info_t struct
+ * clear_info - Th1s funct initializes info_t struct
  * @info: Refers to the struct addr.
  */
 
@@ -13,10 +13,11 @@ void clear_info(info_t *info)
 	info->argc = 0;
 }
 
+
 /**
  * set_info - Ths funct initializes info_t struct.
  * @info: ReferRs to the struct add.
- * @av: Refers to the arg vector.
+ * @av: Refers to arg vector.
  *
  */
 
