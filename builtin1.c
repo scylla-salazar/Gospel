@@ -3,9 +3,9 @@
 /**
  * _myhistory - The function displays the history list, one command by line,
  *              preceded with line numbers, starting at 0.
- * @info: Refers to the Structure containing potential arguments.
+ * @info: Refers to the Structure containing potential .
  *        Used to maintain constant function prototype.
- * Completed by scylla-salazar on 20th May 2023.
+ * Completed by scylla-salaza.
  *  Return: Always 0
  */
 
