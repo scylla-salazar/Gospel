@@ -2,9 +2,7 @@
 
 /**
  * clear_info - This function initializes info_t struct
- * @info: Refers to the struct address.
- * Completed by scylla-salazar on 20th May 2023.
- *
+ * @info: Refers to the struct addr.
  */
 
 void clear_info(info_t *info)
@@ -17,8 +15,8 @@ void clear_info(info_t *info)
 
 /**
  * set_info - This function initializes info_t struct.
- * @info: Refers to the struct address.
- * @av: Refers to the argument vector.
+ * @info: Refers to the struct add.
+ * @av: Refers to the arg vector.
  *
  */
 
@@ -29,7 +27,7 @@ void set_info(info_t *info, char **av)
 	info->fname = av[0];
 	if (info->arg)
 	{
-		info->argv = strtow(info->arg, " \t");
+		info->argv = str_tok(info->arg, " \t");
 		if (!info->argv) /*  */
 		{
 
@@ -51,9 +49,8 @@ void set_info(info_t *info, char **av)
 
 /**
  * free_info - This function frees info_t struct fields.
- * @info: Refers to the struct address.
+ * @info: Refers to the struct add.
  * @all: true, if freeing all fields.
- *
  */
 void free_info(info_t *info, int all)
 {
