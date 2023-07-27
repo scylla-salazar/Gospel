@@ -1,12 +1,11 @@
 #include "shell.h"
 
 /**
- * _strcpy - This function copies a string.
- * @dest: Refers to the destination.
+ * _strcpy - This function copies a str.
+ * @dest: Refers to the dest.
  * @src: Refers to the source.
- * Completed by Loveline-Ezenwafor on 21st May 2023.
- *
- * Return: pointer to destination
+ * Completed .
+ * Return: ptr to dest
  */
 
 char *_strcpy(char *dest, char *src)
@@ -26,10 +25,9 @@ char *_strcpy(char *dest, char *src)
 
 
 /**
- * _strdup - This function duplicates a string.
- * @str: Refers to the string to duplicate
- *
- * Return: pointer to the duplicated str.
+ * _strdup - This function duplicates a str.
+ * @str: Refers to the str to be duplicate
+ * Return: ptr to the duplicated str.
  */
 
 char *_strdup(const char *str)
@@ -52,8 +50,7 @@ char *_strdup(const char *str)
 
 /**
  *_puts - This function prints an input str;
- *@str: Refers to the string to be printed
- *
+ *@str: Refers to the str to be printed
  * Return: Nothing
  */
 void _puts(char *str)
@@ -70,11 +67,9 @@ void _puts(char *str)
 }
 
 /**
- * _putchar - Thid function writes the character c to stdout;
- * @c: Refers to the character to print.
- *
- * Return: 1, On success.
- *        -1, On error, and errno is set appropriately.
+ * _putchar - This function writes the char to stdout;
+ * @c: Refers to the char to print.
+ * Return: 1, On success, -1, On error, and errno is set appropriately.
  */
 
 int _putchar(char c)
