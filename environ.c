@@ -2,9 +2,9 @@
 
 /**
  * _myenv - s function prints the current environment
- * @info: Refers to the Structure containing potential arguments.
+ * @info: Refers to the Structure containing potential arg.
  *          This is used to maintain constant function prototype.
- * Completed by scylla-salazar on 20th May 2023.
+ * Completed by scylla-salazar
  * Return: Always 0
  */
 
