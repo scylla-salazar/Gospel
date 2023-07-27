@@ -5,7 +5,7 @@
  * @info: Refers to the parameter struct
  * @buf: Refers to the address of buffer
  * @len: Refers to the address of len var
- * Completed by scylla-salazar on 20th May 2023.
+ * Completed by scylla-salazar
  *
  * Return: bytes read.
  */
