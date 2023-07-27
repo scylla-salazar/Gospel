@@ -2,13 +2,10 @@
 
 /**
  * hsh - Refers to the main shell loop;
- * @info: Refers to the parameter & return info struct;
- * @av: Refers to the argument vector from main();
- *
- * Completed by Loveline-Ezenwafor on 21st May 2023;
- *
- * Return: 0 on success;
- *         1 on error, or error code
+ * @info: Refers to the paramete infostruct;
+ * @av: Refers to the argu vector from;
+ * Compl
+ * Return: 0 on success; 1 on error, or error code
  */
 
 int hsh(info_t *info, char **av)
@@ -49,13 +46,12 @@ int hsh(info_t *info, char **av)
 
 
 /**
- * find_builtin - This function finds a builtin command;
- * @info: Refers to the parameter & return info struct,
- *
+ * find_builtin - This function finds a builtin cmd;
+ * @info: Refers to the paramet & return info struct,
  * Return: -1 if builtin not found,
  *	    0 if builtin executed successfully;
  *	    1 if builtin found but not successful;
- *	   -2 if builtin signals exit().
+ *	   -2 if builtin signals exit.
  */
 
 int find_builtin(info_t *info)
@@ -84,9 +80,8 @@ int find_builtin(info_t *info)
 }
 
 /**
- * find_cmd - This function finds a command in PATH;
- * @info: Refers to the parameter & return info struct;
- *
+ * find_cmd - This function finds a cmd in PATH;
+ * @info: Refers to the paramet & return info struct;
  * Return: void.
  */
 
@@ -128,8 +123,7 @@ void find_cmd(info_t *info)
 
 /**
  * fork_cmd - This function forks an exec thread to run cmd;
- * @info: Refers to the parameter & return info struct;
- *
+ * @info: Refers to the paramet info struct;
  * Return: void;
  */
 
@@ -153,7 +147,6 @@ void fork_cmd(info_t *info)
 				exit(126);
 			exit(1);
 		}
-		/* TODO: PUT ERROR FUNCTION    */
 	}
 	else
 	{
