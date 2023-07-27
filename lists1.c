@@ -3,7 +3,7 @@
 /**
  * list_len - This function determines length of linked list
  * @h: Refers to pointer to first node
- * Completed by Loveline-Ezenwafor
+ * Completed
  *
  * Return: size of list
  */
