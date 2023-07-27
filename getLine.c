@@ -5,7 +5,7 @@
  * @len: Refers to the addr of len var
  * @info: Referrs to the parametre struct
  * @buf: Refers to the addr of buf
- * 
+ *
  * Completed
  *
  * Return: bytes read.
