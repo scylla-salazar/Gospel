@@ -143,7 +143,7 @@ int _getline(info_t *info, char **ptr, size_t *length)
 		return (-1);
 
 	c = _strchr(buf + a, '\n');
-	b = c ? 1 + (unsigned int)(c - buf) : len;
+	q = c ? 1 + (unsigned int)(c - buf) : len;
 	new_p = _realloc(p, s, s ? s + q : q + 1);
 	if (!new_p)
 		return (p ? free(p), -1 : -1);
