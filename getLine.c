@@ -1,11 +1,12 @@
 #include "shell.h"
 
 /**
- * input_buf - This function buffers chained commands
- * @info: Refers to the parameter struct
- * @buf: Refers to the address of buffer
- * @len: Refers to the address of len var
- * Completed by scylla-salazar
+ * input_buf - This funct buffers chained cmds
+ * @len: Refers to the addr of len var
+ * @info: Referrs to the parametre struct
+ * @buf: Refers to the addr of buf
+ * 
+ * Completed
  *
  * Return: bytes read.
  */
@@ -15,9 +16,9 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 	ssize_t x = 0;
 	size_t len_p = 0;
 
-	if (!*len) /*  if nothing left in the buffer, then fill it */
+	if (!*len)
 	{
-		/*  bfree((void **)info->cmd_buf);; */
+		/* free buf */
 		free(*buf);
 		*buf = NULL;
 		signal(SIGINT, sigintHandler);
@@ -30,13 +31,13 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 		{
 			if ((*buf)[x - 1] == '\n')
 			{
-				(*buf)[x - 1] = '\0'; /*  remove trailing newline, */
+				(*buf)[x - 1] = '\0';
 				x--;
 			}
 			info->linecount_flag = 1;
 			remove_comments(*buf);
 			build_history_list(info, *buf, info->histcount++);
-			/* if (_strchr(*buf, ';')) - is this a cmd chain? */
+			/* 1s it a chain cmd */
 			{
 				*len = x;
 				info->cmd_buf = buf;
@@ -47,15 +48,15 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 }
 
 /**
- * get_input - This function gets a line minus the newline
- * @info: Refers to the parameter struct
+ * get_input - This funct gets a line minus the newline
+ * @info: Refers to the parametre struct
  *
  *  Return: bytes read.
  */
 
 ssize_t get_input(info_t *info)
 {
-	static char *buf; /* the ';' cmd chain buffer  */
+	static char *buf; /* the ';' cmd chain buff */
 	static size_t x, y, len;
 	ssize_t a = 0;
 	char **buf_p = &(info->arg), *p;
@@ -64,69 +65,70 @@ ssize_t get_input(info_t *info)
 	a = input_buf(info, &buf, &len);
 	if (a == -1) /* EOF */
 		return (-1);
-	if (len)	/* we have cmds left in the chain buffer */
+	if (len)
 	{
-		y = x; /* initialize new iterator to current buf position */
-		p = buf + x; /* getting pointer for return */
+		y = x;
+		p = buf + x;
 
 		check_chain(info, buf, &y, x, len);
-		while (y < len) /* iterate to the semicolon or end. */
+		while (y < len)
 		{
 			if (is_chain(info, buf, &y))
 				break;
 			y++;
 		}
 
-		x = y + 1; /*  increment past nulled ';'' */
-		if (x >= len) /* reached end of buffer?  */
+		x = y + 1;
+		if (x >= len)
 		{
-			x = len = 0; /* reset position and length */
+			x = len = 0;
 			info->cmd_buf_type = CMD_NORM;
 		}
 
-		*buf_p = p; /* pass back pointer to current command position */
-		return (_strlen(p)); /* return length of current command */
+		*buf_p = p; /*pasing bck ptr to cur_ent cmd posit */
+		return (_strlen(p)); /* return length of cur_ent cmd */
 	}
 
-	*buf_p = buf; /* else not a chain, pass back buffer from _getline() */
-	return (a); /* return length of buffer from _getline() */
-}
-
-/**
- * read_buf - This function reads a buffer
- * @info: Refers to the parameter struct
- * @buf: Refers to the buffer
- * @i: Refers to the size
- *
- * Return: a
- */
-
-ssize_t read_buf(info_t *info, char *buf, size_t *i)
-{
-	ssize_t a = 0;
-
-	if (*i)
-		return (0);
-	a = read(info->readfd, buf, READ_BUF_SIZE);
-	if (a >= 0)
-		*i = a;
+	*buf_p = buf; /*pas back buf frm _getli */
 	return (a);
 }
 
 /**
- * _getline - This function gets the next line of input from STDIN
- * @info: REfers to the parameter struct
- * @ptr: Refers to address of pointer to buffer, preallocated or NULL
- * @length: Refers to the size of preallocated ptr buffer if not NULL
+ * read_buf - This funct reads a buf
+ * @i: Refers to the size
+ * @info: Refrers to the parametr struct
+ * @buf: Refers to the buff
  *
- * Return: s
+ *
+ * Return: no of chars
+ */
+
+ssize_t read_buf(info_t *info, char *buf, size_t *i)
+{
+	ssize_t t = 0;
+
+	if (*i)
+		return (0);
+	t = read(info->readfd, buf, READ_BUF_SIZE);
+	if (t >= 0)
+		*i = t;
+	return (t);
+}
+
+/**
+ * _getline - This func gets nxt line of input frm standard STDIN
+ *
+ * @ptr: Refers to addr of ptr to buff, preallocated / NULL
+ * @length: Referrs to the size of prealloc ptr buf if not NULL
+ * @info: REfers to the parametr struct
+ * Return: size
  */
 
 int _getline(info_t *info, char **ptr, size_t *length)
 {
 	static char buf[READ_BUF_SIZE];
 	static size_t a, len;
-	size_t b;
+	size_t q;
 	ssize_t r = 0, s = 0;
 	char *p = NULL, *new_p = NULL, *c;
 
@@ -142,17 +144,17 @@ int _getline(info_t *info, char **ptr, size_t *length)
 
 	c = _strchr(buf + a, '\n');
 	b = c ? 1 + (unsigned int)(c - buf) : len;
-	new_p = _realloc(p, s, s ? s + b : b + 1);
-	if (!new_p) /* MALLOC FAILURE!; */
+	new_p = _realloc(p, s, s ? s + q : q + 1);
+	if (!new_p)
 		return (p ? free(p), -1 : -1);
 
 	if (s)
-		_strncat(new_p, buf + a, b - a);
+		_strncat(new_p, buf + a, q - a);
 	else
-		_strncpy(new_p, buf + a, b - a + 1);
+		_strncpy(new_p, buf + a, q - a + 1);
 
-	s += b - a;
-	a = b;
+	s += q - a;
+	a = q;
 	p = new_p;
 
 	if (length)
@@ -162,8 +164,8 @@ int _getline(info_t *info, char **ptr, size_t *length)
 }
 
 /**
- * sigintHandler - The function blocks ctrl-C
- * @sig_num: Refers to the signal number
+ * sigintHandler - The funct blocks ctrl-C
+ * @sig_num: Referrs to the signal num
  *
  * Return: void.
  */
